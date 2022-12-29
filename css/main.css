@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap'); * {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', Arial, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    background-color: rgba(168, 168, 168, 1);
+    position: sticky;
+    top: 0;
+    z-index: 99;
+}
+.hr{
+    border: 1px solid white;
+}
+.right-nav {
+    width: 80%;
+    /* background-color: purple; */
+    display: flex;
+    font-size: 15px;
+}
+
+.login {
+    justify-content: right;
+}
+
+.right-nav ul {
+    list-style: none;
+    display: flex;
+    width: 50%;
+}
+
+.right-nav ul li {
+    padding: 3%;
+    padding-bottom: 0px;
+    padding-left: 4%;
+    padding-right: 4%;
+}
+
+.right-nav ul li a {
+    text-decoration: none;
+    list-style: none;
+    color: black;
+}
+
+.left-nav {
+    width: 18%;
+    /* background-color: yellow; */
+    line-height: 20px;
+    padding: 0.4%;
+    cursor: default;
+}
+
+.content {
+    font-size: 10px;
+}
+
+.logo {
+    font-size: 22px;
+}
+
+.background {
+    height: 100vh;
+}
+
+.sec-f{
+    margin-top: 4%;
+    margin-left: 4%;
+    border: 2px solid grey;
+    height: 55vh;
+    width: 35%;
+    overflow: hidden;
+}
+.sec-f div{
+    border: 1px solid black;
+    height: 13.78%;
+    padding: 0.5%;
+    background-color: azure;
+    transition: 0.5s;
+}
+.slide{
+    display: flex;
+}
+
+.slide div{
+    position: relative;
+    padding-top: 20px;
+    max-width: 600px;
+}
+.slide div img{
+    width: 500px;
+}
+.background .slide:hover div{
+    transition: 0.5s;
+    left: 600px;
+}
