@@ -1,82 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/main.css">
-        <title>Computer Science</title>
-    </head>
-    <body>
-        <nav class="navbar">
-            <div class="left-nav">
-                <p class="logo">Computer Science</p>
-                <p class="content">Lorem ipsum dolor sit amet consectetur,</p>
-            </div>
-            <div class="hr"></div>
-            <div class="right-nav">
-                <ul>
-                    <li>
-                        <a href="index.htm">Home</a>
-                    </li>
-                    <li>
-                        <a href="">About</a>
-                    </li>
-                    <li>
-                        <a href="">Projects</a>
-                    </li>
-                </ul>
-                <ul class="login">
-                    <li>
-                        <a href="login.php">Login</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <section class="background">
-           <div class="slide">
-                <div>
-                    <img src="bg/1.jpg" alt="">
-                </div>
-                <div>
-                    <img src="bg/2.jpg" alt="">
-                </div>
-                <div>
-                    <img src="bg/3.jpg" alt="">
-                </div>
-                <div>
-                    <img src="bg/4.jpg" alt="">
-                </div>
-                <div>
-                    <img src="bg/5.jpg" alt="">
-                </div>
-                <div>
-                    <img src="bg/6.jpg" alt="">
-                </div>
-           </div>
-            <!-- <div class="sec-f">
-                <div>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic at, quibusdam perspiciatis harum incidunt </p>
-                </div>
-                <div>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic at, quibusdam perspiciatis harum incidunt </p>
-                </div>
-                <div>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic at, quibusdam perspiciatis harum incidunt </p>
-                </div>
-                <div>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic at, quibusdam perspiciatis harum incidunt </p>
-                </div>
-                <div>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic at, quibusdam perspiciatis harum incidunt </p>
-                </div>
-                <div>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic at, quibusdam perspiciatis harum incidunt </p>
-                </div>
-                <div>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic at, quibusdam perspiciatis harum incidunt </p>
-                </div>
-            </div> -->
-        </section>
-    </body>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="sara mazal lessons">
+  <meta name="keywords" content="HTML, CSS, JavaScript, mazal, icons">
+  <meta name="author" content="AEGENT FOCKS">
+  <title>Vikas Sir</title>
+  <!--  SGVsbG8hIE15IG5hbWUgaXMgU2FyYSBNYXphbC4gV2VsY29tZSB0byBteSBDb2RlUGVuIQ== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;500&family=Raleway:wght@100;200;300;400;500&family=Roboto:wght@300;400;700&display=swap"
+    rel="stylesheet">
+  <!-- SGVsbG8hIE15IG5hbWUgaXMgU2FyYSBNYXphbC4gV2VsY29tZSB0byBteSBDb2RlUGVuOiBodHRwczovL2NvZGVwZW4uaW8vU2FyYW1hemFsICYgR2l0SHViOiBodHRwczovL2dpdGh1Yi5jb20vc2FyYW1hemFs -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/loader.css">
+  <script src="../../../js/preloader.js"></script>
+</head>
+
+<body onload="fpreloader()">
+
+  <div id="preloader" class="preloader">
+    <svg role="img"
+      aria-label="Mouth and eyes come from 9:00 and rotate clockwise into position, right eye blinks, then all parts rotate and merge into 3:00"
+      class="smiley" viewBox="0 0 128 128" width="128px" height="128px">
+      <defs>
+        <clipPath id="smiley-eyes">
+          <circle class="smiley__eye1" cx="64" cy="64" r="8" transform="rotate(-40,64,64) translate(0,-56)" />
+          <circle class="smiley__eye2" cx="64" cy="64" r="8" transform="rotate(40,64,64) translate(0,-56)" />
+        </clipPath>
+        <linearGradient id="smiley-grad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#000" />
+          <stop offset="100%" stop-color="#fff" />
+        </linearGradient>
+        <mask id="smiley-mask">
+          <rect x="0" y="0" width="128" height="128" fill="url(#smiley-grad)" />
+        </mask>
+      </defs>
+      <g stroke-linecap="round" stroke-width="12" stroke-dasharray="175.93 351.86">
+        <g>
+          <rect fill="hsl(193,90%,50%)" width="128" height="64" clip-path="url(#smiley-eyes)" />
+          <g fill="none" stroke="hsl(193,90%,50%)">
+            <circle class="smiley__mouth1" cx="64" cy="64" r="56" transform="rotate(180,64,64)" />
+            <circle class="smiley__mouth2" cx="64" cy="64" r="56" transform="rotate(0,64,64)" />
+          </g>
+        </g>
+        <g mask="url(#smiley-mask)">
+          <rect fill="hsl(223,90%,50%)" width="128" height="64" clip-path="url(#smiley-eyes)" />
+          <g fill="none" stroke="hsl(223,90%,50%)">
+            <circle class="smiley__mouth1" cx="64" cy="64" r="56" transform="rotate(180,64,64)" />
+            <circle class="smiley__mouth2" cx="64" cy="64" r="56" transform="rotate(0,64,64)" />
+          </g>
+        </g>
+      </g>
+    </svg>
+  </div>
+
+
+  <section class="nav">
+    <h1>COMPUTER SCIENCE</h1>
+    <h3 class="span loader"><span class="m">B</span><span class="m">E</span><span class="m">N</span><span
+        class="m">E</span><span class="m">F</span><span class="m">I</span><span class="m">T</span><span
+        class="m">S</span><span class="m">&nbsp;</span><span class="m">o</span><span class="m">f</span><span
+        class="m">&nbsp;</span><span class="m">T</span><span class="m">E</span><span class="m">C</span><span
+        class="m">H</span><span class="m">N</span><span class="m">O</span><span class="m">L</span><span
+        class="m">O</span><span class="m">G</span><span class="m">I</span><span class="m">E</span><span
+        class="m">S</span></h3>
+    <div class="nav-container"><a class="nav-tab" href="#tab-svelte">SVELTE</a><a class="nav-tab"
+        href="#tab-python">PYTHON</a><a class="nav-tab" href="#tab-next">NEXT.JS</a><a class="nav-tab"
+        href="#tab-typescript">TYPESCRIPT</a><a class="nav-tab" href="#tab-login">LOGIN</a><span class="nav-tab-slider">
+        </ span>
+    </div>
+  </section>
+  <main class="main">
+    <section class="slider" id="tab-svelte">
+      <h1>SVELTE</h1>
+      <h2>another frontend JS framework</h2>
+    </section>
+    <section class="slider" id="tab-python">
+      <a href="python/3/tutorial/index.html">
+        <h1>PYTHON</h1>
+      </a>
+      <h2>Python is a high-level, general-purpose programming language.</h2>
+    </section>
+    <section class="slider" id="tab-next">
+      <h1>NEXT.JS</h1>
+      <h2>framework for Production</h2>
+    </section>
+    <section class="slider" id="tab-typescript">
+      <h1>TYPESCRIPT</h1>
+      <h2>giving you better tooling at any scale</h2>
+    </section>
+    <section class="slider" id="tab-login">
+      <a href="login.php">
+        <h1>LOGIN</h1>
+      </a>
+      <h2>By clicking on LOGIN you agree to our terms and conditions.</h2>
+    </section>
+  </main>
+
+</body>
+
 </html>

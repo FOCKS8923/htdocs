@@ -122,37 +122,6 @@ label {
   color: #A2A4A4;
 }
 
-.backbttm {
+.loginbttm {
   padding: 0px;
-}
-
-.back-btm {
-  float: left;
-}
-
-.back-button {
-  padding-right: 0px;
-  text-align: right;
-  margin-bottom: 25px;
-}
-
-.back-text {
-  text-align: left;
-  padding-left: 0px;
-  color: #A2A4A4;
-}
-
-.backbttm {
-  padding: 0px;
-}
-
-.btn {
-  margin-top: 40px;
-}
-
-@media (min-width: 992px) {
-  .col-lg-6 {
-    flex: 0 0 50%;
-    max-width: 50%;
-  }
 }

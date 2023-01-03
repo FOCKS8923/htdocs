@@ -6,7 +6,7 @@
 
 .navbar {
     display: flex;
-    background-color: rgba(168, 168, 168, 1);
+    background-color: rgba(168, 168, 168, 0);
     position: sticky;
     top: 0;
     z-index: 99;
@@ -58,40 +58,4 @@
 
 .logo {
     font-size: 22px;
-}
-
-.background {
-    height: 100vh;
-}
-
-.sec-f{
-    margin-top: 4%;
-    margin-left: 4%;
-    border: 2px solid grey;
-    height: 55vh;
-    width: 35%;
-    overflow: hidden;
-}
-.sec-f div{
-    border: 1px solid black;
-    height: 13.78%;
-    padding: 0.5%;
-    background-color: azure;
-    transition: 0.5s;
-}
-.slide{
-    display: flex;
-}
-
-.slide div{
-    position: relative;
-    padding-top: 20px;
-    max-width: 600px;
-}
-.slide div img{
-    width: 500px;
-}
-.background .slide:hover div{
-    transition: 0.5s;
-    left: 600px;
 }
