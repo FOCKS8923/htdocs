@@ -1,3 +1,13 @@
+<?php
+session_start();
+if (!isset($_SESSION['student_id'])) {
+  header("Location: failed-login.htm");
+  exit;
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,5 +20,6 @@
     <p>
         This is user page
     </p>
+    <a href="logout.php">LOGOUT</a>
 </body>
 </html>
