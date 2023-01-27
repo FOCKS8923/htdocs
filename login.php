@@ -6,27 +6,27 @@ require 'config.php';
 // Check for form submission
 if (isset($_POST['login'])) {
     // Get the form data
-    $student_id = mysqli_real_escape_string($conn, $_POST['student_id']);
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
     $password = mysqli_real_escape_string($conn, $_POST['password']);
 
     // Validate the form data
-    if (empty($student_id)) {
-        $error = "Enter your Student ID";
+    if (empty($email)) {
+        $error = "Enter your email";
     } elseif (empty($password)) {
         $error = "Enter your password";
     } else {
         // Check the credentials against the database
-        $query = "SELECT * FROM login_details WHERE student_id='$student_id' AND password='$password'";
+        $query = "SELECT * FROM login_details WHERE email='$email' AND password='$password'";
         $result = mysqli_query($conn, $query);
 
         if (mysqli_num_rows($result) == 1) {
             // Login successful
             $user = mysqli_fetch_assoc($result);
             $_SESSION['id'] = $user['id'];
-            $_SESSION['student_id'] = $user['student_id'];
+            $_SESSION['email'] = $user['email'];
             if(isset($_POST['remember'])) {
               // Create a remember me cookie if the checkbox is checked
-              setcookie("student_id", $student_id, time() + (86400 * 30));
+              setcookie("email", $email, time() + (86400 * 30));
               setcookie("password", $password, time() + (86400 * 30));
           }
             header('location: student-page.php');
@@ -38,7 +38,7 @@ if (isset($_POST['login'])) {
 }
 
 // Check if the user is already logged in
-if (isset($_SESSION['student_id'])) {
+if (isset($_SESSION['email'])) {
     header('location: student-page.php');
 }
 
@@ -65,13 +65,13 @@ if (isset($_SESSION['student_id'])) {
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="css/loader.css">
-    <script src="../../../js/preloader.js"></script>
+    <script src="js/preloader.js"></script>
 
 </head>
 
 <body onload="fpreloader()">
 
-    <!-- <div id="preloader" class="preloader">
+    <div id="preloader" class="preloader">
         <svg role="img"
             aria-label="Mouth and eyes come from 9:00 and rotate clockwise into position, right eye blinks, then all parts rotate and merge into 3:00"
             class="smiley" viewBox="0 0 128 128" width="128px" height="128px">
@@ -105,7 +105,7 @@ if (isset($_SESSION['student_id'])) {
                 </g>
             </g>
         </svg>
-    </div> -->
+    </div>
     <form method="post" action="">
         <div class="container">
       <div class="row">
@@ -122,8 +122,8 @@ if (isset($_SESSION['student_id'])) {
             <div class="col-lg-12 login-form">
               <form>
                 <div class="form-group">
-                  <label class="form-control-label" for="student_id">Student ID</label>
-                  <input value="<?php if(isset($_COOKIE['student_id'])) { echo $_COOKIE['student_id']; } ?>" type="text" class="form-control" id="student_id" name="student_id">
+                  <label class="form-control-label" for="email">EMAIL</label>
+                  <input value="<?php if(isset($_COOKIE['email'])) { echo $_COOKIE['email']; } ?>" type="text" class="form-control" id="email" name="email">
                 </div>
                 <div class="form-group">
                   <label class="form-control-label" for="password">PASSWORD</label>
@@ -135,8 +135,8 @@ if (isset($_SESSION['student_id'])) {
                 <div class="col-lg-12 loginbttm">
                   <div class="col-lg-6 login-btm login-text">
                   <?php if (isset($error)) { ?>
-        <p><?php echo $error; ?></p>
-        <?php } ?>
+                  <p><?php echo $error; ?></p>
+                  <?php } ?>
                   </div>
                   <div class="col-lg-6 login-btm login-button">
                     <button type="submit" class="btn btn-outline-primary" name="login">LOGIN</button>
@@ -149,9 +149,6 @@ if (isset($_SESSION['student_id'])) {
           <div class="col-lg-3 col-md-2"></div>
         </div>
       </div>
-      <?php if (isset($error)) { ?>
-        <p><?php echo $error; ?></p>
-        <?php } ?>
     </form>
 </body>
 

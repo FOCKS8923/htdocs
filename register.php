@@ -4,14 +4,13 @@ require 'config.php';
 
 if (isset($_POST['submit'])){
 	$student_name = $_POST['student_name'];
-	$father_name = $_POST['father_name'];
 	$mobile_no = $_POST['mobile_no'];
-	$student_id = $_POST['student_id'];
+	$email = $_POST['email'];
 	$password = $_POST['password'];
 	$user_type = $_POST['user_type'];
 
 
-	$user = mysqli_query($conn, "SELECT * FROM login_details WHERE student_id = '$student_id' OR student_name = '$student_name' OR father_name = '$father_name'");
+	$user = mysqli_query($conn, "SELECT * FROM login_details WHERE email = '$email' OR student_name = '$student_name' OR father_name = '$father_name'");
 	if(mysqli_num_rows($user) > 0){
 		echo
 			"<script> 
@@ -19,7 +18,7 @@ if (isset($_POST['submit'])){
 			</script>";
 	}
 	else{
-		$query = "INSERT INTO login_details VALUES(0,'$student_name','$father_name',$mobile_no,$student_id,'$password','$user_type')";
+		$query = "INSERT INTO login_details VALUES(0,'$student_name','$father_name',$mobile_no,$email,'$password','$user_type')";
 		mysqli_query($conn, $query);
 		echo
 			"<script> 
@@ -60,15 +59,7 @@ if (isset($_POST['submit'])){
 
 
         <!--father name-->
-    		<div class="box">
-          <label for="father_name" id="father_name" class="fl fontLabel"> Father's Name: </label>
-    			<div class="fl iconBox"><i class="fa fa-user" aria-hidden="true"></i></div>
-    			<div class="fr">
-    					<input type="text" required name="father_name"
-              placeholder="Father's Name" class="textBox">
-    			</div>
-    			<div class="clr"></div>
-    		</div>
+    		
     		<!--father name-->
 
 
@@ -86,10 +77,10 @@ if (isset($_POST['submit'])){
 
     		<!---Student ID---->
     		<div class="box">
-          <label for="student_id" class="fl fontLabel"> Student ID: </label>
+          <label for="email" class="fl fontLabel"> Email: </label>
     			<div class="fl iconBox"><i class="fa fa-envelope" aria-hidden="true"></i></div>
     			<div class="fr">
-    					<input type="number" required name="student_id" placeholder="Student ID" class="textBox">
+    					<input type="number" required name="email" placeholder="Email" class="textBox">
     			</div>
     			<div class="clr"></div>
     		</div>
@@ -109,8 +100,8 @@ if (isset($_POST['submit'])){
 
     		<!---Role----->
     		<div class="box radio">
-          <label for="gender" class="fl fontLabel"> Gender: </label>
-    				<input type="radio" name="user_type" value="student" required> Student &nbsp; &nbsp; &nbsp; &nbsp;
+          <label for="gender" class="fl fontLabel"> Role: </label>
+    				<input type="radio" name="user_type" value="student" required> User &nbsp; &nbsp; &nbsp; &nbsp;
     				<input type="radio" name="user_type" value="admin" required> Admin
     		</div>
     		<!---Role--->

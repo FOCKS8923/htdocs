@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['student_id'])) {
-  header("Location: failed-login.htm");
+  header("Location: no-login.htm");
   exit;
 }
 ?>
