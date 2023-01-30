@@ -41,7 +41,7 @@ body{
 
 .box{
 	width: 360px;
-	height: 35px;
+	height: 40px;
 	margin-top: 10px;
 	font-family: verdana;
 	font-size: 12px;
@@ -74,6 +74,7 @@ body{
 
 .terms{
 	line-height: 35px;
+	margin-top: 20%;
 	text-align: center;
 	background: #2d3e3f;
 	color: white;
@@ -108,3 +109,10 @@ body{
     /* Chrome/Opera/Safari */
 }
 
+.fa{
+	margin-top: 25%;
+}
+
+.butn{
+	margin-top: 10%;
+}

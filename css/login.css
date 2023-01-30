@@ -60,6 +60,13 @@ body {
     margin-bottom: 20px;
     color: #ECF0F5;
   }
+
+  input[type=checkbox], input[type=radio] {
+    box-sizing: border-box;
+    margin: 4px;
+    height: 15px;
+    width: 15px;
+}
   
   .form-group {
     margin-bottom: 40px;

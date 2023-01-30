@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | DataTables</title>
+  <title>USER DETAILS</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -26,7 +26,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="../../index3.html" class="nav-link">Home</a>
+        <a href="../../index2.html" class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Contact</a>
@@ -169,7 +169,7 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="../../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
           <a href="#" class="d-block">User Name</a>
@@ -193,8 +193,8 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
+          <li class="nav-item">
+            <a href="#" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -203,15 +203,15 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./index2.html" class="nav-link active">
+                <a href="../../index2.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Dashboard</p>
                 </a>
               </li>
             </ul>
           </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
+          <li class="nav-item menu-open">
+            <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-table"></i>
               <p>
                 Tables
@@ -220,7 +220,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="data.php" class="nav-link">
+                <a href="data.php" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>User Details</p>
                 </a>
@@ -286,7 +286,7 @@
                       require '../../../config.php';
 
                       // read all row from database
-                      $sql = "SELECT * FROM login_details";
+                      $sql = "SELECT * FROM user_details";
                       $result = $conn->query($sql);
 
                       // read data of each row 
@@ -297,8 +297,8 @@
                       <td>".$row["email"]."</td>
                       <td>".$row["mobile_no"]."</td>
                       <td>
-                        <a href='#' class='btn btn-primary'>Edit</a>
-                        <a href='#' class='btn btn-danger'>Delete</a>
+                        <a href='action/edit.php?Sno=$row[Sno]' class='btn btn-primary'>Edit</a>
+                        <a href='action/delete.php?Sno=$row[Sno]' class='btn btn-danger'>Delete</a>
                       </td>
                     </tr>";
                     }
@@ -363,7 +363,7 @@
 <!-- AdminLTE App -->
 <script src="../../dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="../../dist/js/demo.js"></script>
+<!-- <script src="../../dist/js/demo.js"></script> -->
 <!-- Page specific script -->
 <script>
   $(function () {

@@ -2,7 +2,7 @@
 session_start(); // Start the session
 
 // Connect to the database
-require 'config.php';
+require '../config.php';
 // Check for form submission
 if (isset($_POST['login'])) {
     // Get the form data
@@ -16,7 +16,7 @@ if (isset($_POST['login'])) {
         $error = "Enter your password";
     } else {
         // Check the credentials against the database
-        $query = "SELECT * FROM login_details WHERE email='$email' AND password='$password'";
+        $query = "SELECT * FROM admin_details WHERE email='$email' AND password='$password'";
         $result = mysqli_query($conn, $query);
 
         if (mysqli_num_rows($result) == 1) {
@@ -29,7 +29,7 @@ if (isset($_POST['login'])) {
               setcookie("email", $email, time() + (86400 * 30));
               setcookie("password", $password, time() + (86400 * 30));
           }
-            header('location: student-page.php');
+            header('location: ../admin-dashboard/index2.html');
         } else {
             // Login failed
             $error = "Invalid credentials";
@@ -39,7 +39,7 @@ if (isset($_POST['login'])) {
 
 // Check if the user is already logged in
 if (isset($_SESSION['email'])) {
-    header('location: student-page.php');
+    header('location: ../admin-dashboard/index2.html');
 }
 
 ?>
@@ -63,9 +63,9 @@ if (isset($_SESSION['email'])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
 
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="stylesheet" href="css/login.css">
-    <link rel="stylesheet" href="css/loader.css">
-    <script src="js/preloader.js"></script>
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/loader.css">
+    <script src="../js/preloader.js"></script>
 
 </head>
 

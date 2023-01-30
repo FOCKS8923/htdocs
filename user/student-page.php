@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (!isset($_SESSION['student_id'])) {
+if (!isset($_SESSION['email'])) {
   header("Location: no-login.htm");
   exit;
 }

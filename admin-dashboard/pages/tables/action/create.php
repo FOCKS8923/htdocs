@@ -1,24 +1,22 @@
 <?php
 
-require 'config.php';
+require '../../../../config.php';
 
 if (isset($_POST['submit'])){
-	$student_name = $_POST['student_name'];
+	$user_name = $_POST['user_name'];
 	$mobile_no = $_POST['mobile_no'];
 	$email = $_POST['email'];
 	$password = $_POST['password'];
-	$user_type = $_POST['user_type'];
 
-
-	$user = mysqli_query($conn, "SELECT * FROM login_details WHERE email = '$email' OR student_name = '$student_name' OR father_name = '$father_name'");
+	$user = mysqli_query($conn, "SELECT * FROM user_details WHERE email = '$email'");
 	if(mysqli_num_rows($user) > 0){
 		echo
 			"<script> 
-				alert('Student already Registered Try loging In')
+				alert('User already Registered Try loging In')
 			</script>";
 	}
 	else{
-		$query = "INSERT INTO login_details VALUES(0,'$student_name','$father_name',$mobile_no,$email,'$password','$user_type')";
+		$query = "INSERT INTO user_details VALUES(0,'$user_name',$mobile_no,'$email','$password')";
 		mysqli_query($conn, $query);
 		echo
 			"<script> 
@@ -36,7 +34,7 @@ if (isset($_POST['submit'])){
   <head>
     <meta charset="utf-8">
     <title>Register</title>
-    <link href="css/register.css" type="text/css" rel="stylesheet">
+    <link href="../../../../css/create.css" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
@@ -45,23 +43,17 @@ if (isset($_POST['submit'])){
       <form method="post" autocomplete="on">
         <!--studen name-->
     		<div class="box">
-          <label for="student_name" id="student_name" class="fl fontLabel">Student Name: </label>
+          <label for="student_name" id="student_name" class="fl fontLabel">User Name: </label>
     			<div class="new iconBox">
             <i class="fa fa-user" aria-hidden="true"></i>
           </div>
     			<div class="fr">
-    					<input type="text" name="student_name" placeholder="Student Name"
+    					<input type="text" name="user_name" placeholder="User Name"
               class="textBox" autofocus="on" required>
     			</div>
     			<div class="clr"></div>
     		</div>
-    		<!--student name-->
-
-
-        <!--father name-->
-    		
-    		<!--father name-->
-
+    		<!--user name-->
 
     		<!---Phone No.------>
     		<div class="box">
@@ -75,12 +67,12 @@ if (isset($_POST['submit'])){
     		<!---Phone No.---->
 
 
-    		<!---Student ID---->
+    		<!---Email---->
     		<div class="box">
           <label for="email" class="fl fontLabel"> Email: </label>
     			<div class="fl iconBox"><i class="fa fa-envelope" aria-hidden="true"></i></div>
     			<div class="fr">
-    					<input type="number" required name="email" placeholder="Email" class="textBox">
+    					<input type="email" required name="email" placeholder="Email" class="textBox">
     			</div>
     			<div class="clr"></div>
     		</div>
@@ -98,14 +90,7 @@ if (isset($_POST['submit'])){
     		</div>
     		<!---Password---->
 
-    		<!---Role----->
-    		<div class="box radio">
-          <label for="gender" class="fl fontLabel"> Role: </label>
-    				<input type="radio" name="user_type" value="student" required> User &nbsp; &nbsp; &nbsp; &nbsp;
-    				<input type="radio" name="user_type" value="admin" required> Admin
-    		</div>
-    		<!---Role--->
-
+            
 
     		<!--Terms and Conditions------>
     		<div class="box terms">
@@ -116,7 +101,7 @@ if (isset($_POST['submit'])){
 
 
     		<!---Submit Button------>
-    		<div class="box" style="background: #2d3e3f">
+    		<div class="box butn" style="background: #2d3e3f">
     				<input type="submit" name="submit" class="submit" value="SUBMIT">
                     <a href="index.htm" class="back">Back</a>
     		</div>
